@@ -1,0 +1,118 @@
+:root {
+  -webkit-font-smoothing: antialiased;
+}
+
+code {
+  -webkit-font-smoothing: initial;
+}
+
+body {
+  margin: 0;
+  text-align: left;
+  background-color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: black;
+}
+
+:not(pre) > code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
+}
+
+/* Rehype Pretty Code */
+[data-rehype-pretty-code-fragment] {
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] pre {
+  background-color: #1e293b;
+  max-height: 32rem;
+  margin: 0;
+  padding: 1.25rem;
+  margin-right: 0.75rem;
+  border-radius: 0.5rem;
+  border: 0;
+  overflow: auto;
+}
+
+.code-preview [data-rehype-pretty-code-fragment] pre {
+  max-height: max-content;
+  border: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+[data-rehype-pretty-code-fragment] .highlighted::after {
+  content: ' +';
+  display: grid;
+  align-items: center;
+  width: calc(100% + 2.5rem);
+  height: 100%;
+  color: #4ade80;
+  font-size: 0.875rem;
+  position: absolute;
+  top: 0;
+  left: -1.25rem;
+  z-index: 0;
+  border-left: 0.2rem solid #4ade80;
+  background-color: rgba(74, 222, 128, 0.1);
+}
+
+[data-rehype-pretty-code-fragment] .word {
+  padding: 0.0875rem 0.125rem;
+  border-radius: 0.25rem;
+  background-color: rgba(74, 222, 128, 0.15);
+}
+
+[data-rehype-pretty-code-fragment] code {
+  display: block;
+  width: 100%;
+  font-family: 'Fira Code';
+  font-size: 1rem;
+  counter-reset: line;
+}
+
+table tbody tr td code {
+  font-weight: 600;
+}
+
+[data-rehype-pretty-code-fragment] code .line {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] .line.highlighted span {
+  position: relative;
+  z-index: 2;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  counter-reset: line;
+}
+
+[data-rehype-pretty-code-fragment] code[data-line-numbers] > .line::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+[data-rehype-pretty-code-fragment] code[data-line-numbers-max-digits='2'] > .line::before {
+  width: 2rem;
+}
+
+[data-rehype-pretty-code-fragment] code[data-line-numbers-max-digits='3'] > .line::before {
+  width: 3rem;
+}
