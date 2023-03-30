@@ -7,8 +7,8 @@ module.exports = withMT({
     extend: {
       fontFamily: {
         sans: defaultTheme.fontFamily.sans,
-				serif: defaultTheme.fontFamily.serif,
-				mono: defaultTheme.fontFamily.mono,
+        serif: defaultTheme.fontFamily.serif,
+        mono: defaultTheme.fontFamily.mono,
       },
       typography: {
         DEFAULT: {
