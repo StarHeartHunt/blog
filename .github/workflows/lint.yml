@@ -1,4 +1,4 @@
-name: Upload dist
+name: eslint check
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  upload:
+  lint:
     runs-on: ubuntu-latest
     concurrency:
       group: upload-dist-${{ github.ref }}
@@ -19,10 +19,4 @@ jobs:
         uses: ./.github/actions/setup-node
 
       - name: Build Dist
-        run: pnpm run build
-
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: pages publish --project-name=avalonia dist/
+        run: pnpm run lint
