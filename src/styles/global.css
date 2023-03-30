@@ -74,7 +74,6 @@ body {
   display: block;
   width: 100%;
   font-family: 'Fira Code';
-  font-size: 1rem;
   counter-reset: line;
 }
 
