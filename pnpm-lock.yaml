@@ -16,9 +16,6 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^3.1.1
     version: 3.1.1(astro@2.1.8)(tailwindcss@3.3.0)
-  '@material-tailwind/html':
-    specifier: ^2.0.0
-    version: 2.0.0
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.0)
@@ -792,13 +789,6 @@ packages:
 
   /@ljharb/has-package-exports-patterns@0.0.2:
     resolution: {integrity: sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==}
-    dev: false
-
-  /@material-tailwind/html@2.0.0:
-    resolution: {integrity: sha512-+om7F4fft1bejy3vWb9ZFYB3kRnFAtcgMUybi/0A5jvDJHR5rS+ieciBQ9K1GrZas4vx3adz1k7fV2+EFHmZ0A==}
-    dependencies:
-      deepmerge: 4.3.1
-      material-ripple-effects: 2.0.1
     dev: false
 
   /@mdx-js/mdx@2.3.0:
@@ -3083,10 +3073,6 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
-    dev: false
-
-  /material-ripple-effects@2.0.1:
-    resolution: {integrity: sha512-hHlUkZAuXbP94lu02VgrPidbZ3hBtgXBtjlwR8APNqOIgDZMV8MCIcsclL8FmGJQHvnORyvoQgC965vPsiyXLQ==}
     dev: false
 
   /mdast-util-definitions@5.1.2:

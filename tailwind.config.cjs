@@ -1,15 +1,7 @@
-const withMT = require('@material-tailwind/html/utils/withMT');
-const defaultTheme = require('tailwindcss/defaultTheme');
-
-module.exports = withMT({
+module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
-      fontFamily: {
-        sans: defaultTheme.fontFamily.sans,
-        serif: defaultTheme.fontFamily.serif,
-        mono: defaultTheme.fontFamily.mono,
-      },
       typography: {
         DEFAULT: {
           css: {
@@ -25,4 +17,4 @@ module.exports = withMT({
     },
   },
   plugins: [require('@tailwindcss/typography')],
-});
+};
