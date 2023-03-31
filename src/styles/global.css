@@ -1,9 +1,9 @@
 :root {
-  -webkit-font-smoothing: antialiased;
+  @apply antialiased;
 }
 
 code {
-  -webkit-font-smoothing: initial;
+  @apply subpixel-antialiased;
 }
 
 body {
@@ -118,7 +118,7 @@ table tbody tr td code {
 .copy-code {
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 10px;
   background-color: #3730a3;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
@@ -127,4 +127,25 @@ table tbody tr td code {
 
 .copy-code:hover {
   background-color: #312e81;
+}
+
+.heading-anchor {
+  float: left;
+  opacity: 0;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+h1:hover .heading-anchor,
+h1 .heading-anchor:focus,
+h2:hover .heading-anchor,
+h2 .heading-anchor:focus,
+h3:hover .heading-anchor,
+h3 .heading-anchor:focus,
+h4:hover .heading-anchor,
+h4 .heading-anchor:focus,
+h5:hover .heading-anchor,
+h5 .heading-anchor:focus,
+h6:hover .heading-anchor,
+h6 .heading-anchor:focus {
+  opacity: 1;
 }
