@@ -7,7 +7,10 @@ module.exports = {
 					css: {
             a: {
               'text-decoration': 'none',
-            },
+						},
+						"a:hover": {
+							color:"var(--tw-prose-invert-links)"
+						},
             'code::before': {
               content: '""',
             },
