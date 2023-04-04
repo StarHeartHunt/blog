@@ -4,13 +4,13 @@ module.exports = {
     extend: {
       typography: ({ theme }) => ({
         DEFAULT: {
-					css: {
+          css: {
             a: {
               'text-decoration': 'none',
-						},
-						"a:hover": {
-							color:"var(--tw-prose-invert-links)"
-						},
+            },
+            'a:hover': {
+              color: 'var(--tw-prose-invert-links)',
+            },
             'code::before': {
               content: '""',
             },
