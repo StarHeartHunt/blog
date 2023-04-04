@@ -7,36 +7,35 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "pnpm run format:code",
-    "format:ci": "pnpm run format:imports && pnpm run format:code",
-    "format:code": "prettier -w . --cache --plugin-search-dir=.",
-    "format:imports": "organize-imports-cli ./tsconfig.json",
-    "lint": "eslint ."
+    "format": "npm run format:code",
+    "format:ci": "npm run format:imports && npm run format:code",
+    "format:code": "prettier --write . --cache --plugin-search-dir=.",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^2.1.2",
     "@astrojs/mdx": "^0.18.2",
-    "@astrojs/react": "^2.1.0",
-    "@astrojs/rss": "^2.3.1",
+    "@astrojs/react": "^2.1.1",
+    "@astrojs/rss": "^2.3.2",
     "@astrojs/sitemap": "^1.2.1",
     "@astrojs/tailwind": "^3.1.1",
-    "@fortawesome/fontawesome-free": "^6.4.0",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/react": "^18.0.31",
+    "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "astro": "^2.1.8",
+    "astro": "^2.1.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.9.4",
     "rollup": "^3.20.2",
     "shiki": "^0.14.1",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-astro": "^0.26.1",
@@ -46,6 +45,6 @@
     "prettier": "^2.8.7",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "^0.2.6",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   }
 }
