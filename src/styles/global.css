@@ -1,21 +1,3 @@
-:root {
-  @apply antialiased;
-}
-
-code {
-  @apply subpixel-antialiased;
-}
-
-body {
-  margin: 0;
-  text-align: left;
-  background-color: #fff;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  line-height: 1.5;
-  color: black;
-}
-
 :not(pre) > code {
   padding: 0.2em 0.4em;
   margin: 0;
@@ -76,10 +58,6 @@ body {
   counter-reset: line;
 }
 
-table tbody tr td code {
-  font-weight: 600;
-}
-
 [data-rehype-pretty-code-fragment] code .line {
   display: inline-block;
   width: 100%;
@@ -129,8 +107,15 @@ table tbody tr td code {
   background-color: #312e81;
 }
 
+.heading-anchor:before {
+  content: '#';
+}
+
 .heading-anchor {
   float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  font-weight: 500;
   opacity: 0;
   transition: color 0.25s, opacity 0.25s;
 }

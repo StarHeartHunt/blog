@@ -16,7 +16,7 @@ const posts = (await getCollection('blog')).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="antialiased">
     <Header />
     <main class="dark:prose-dark p-auto container prose prose-cyan m-auto min-h-screen">
       <section>

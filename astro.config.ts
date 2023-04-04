@@ -20,13 +20,12 @@ export default defineConfig({
         rehypeAutolinkHeadings,
         {
           behavior: 'append',
+          properties: {
+            className: ['heading-anchor'],
+          },
           content: {
-            type: 'element',
-            tagName: 'i',
-            properties: {
-              className: ['heading-anchor', 'fa-sharp', 'fa-solid', 'fa-hashtag'],
-            },
-            children: [],
+            type: 'text',
+            value: '\u200B',
           },
         },
       ],
