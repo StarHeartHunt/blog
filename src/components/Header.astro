@@ -3,9 +3,9 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header class="mb-8">
+<header class="sticky inset-0 top-0 z-10 mb-8">
   <nav
-    class="sticky inset-0 z-10 block h-max w-full max-w-full rounded-none border border-white/80 bg-white bg-opacity-80 px-4 py-2 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200"
+    class="supports-backdrop-blur:bg-white/60 h-max w-full max-w-full bg-white/95 px-4 py-2 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:z-50 lg:border-b lg:border-slate-900/10"
   >
     <div class="flex items-center text-gray-900">
       <a
