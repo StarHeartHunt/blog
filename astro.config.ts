@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
-import { readingTimeRemarkPlugin } from './src/utils/frontmatter';
+import { remarkReadingTime } from './src/utils/frontmatter';
 
 import compress from 'astro-compress';
 
@@ -18,7 +18,7 @@ export default defineConfig({
     shikiConfig: {
       theme: 'one-dark-pro',
     },
-    remarkPlugins: [readingTimeRemarkPlugin],
+    remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       rehypeHeadingIds,
       [
