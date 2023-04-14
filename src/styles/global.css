@@ -45,7 +45,8 @@
 [data-rehype-pretty-code-fragment] code {
   display: block;
   width: 100%;
-  font-family: 'Fira Code';
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   counter-reset: line;
 }
 
@@ -84,22 +85,22 @@
   width: 3rem;
 }
 
-:not(pre)>code {
-	padding: 0.2em 0.4em;
-	margin: 0;
-	font-size: 85%;
-	white-space: break-spaces;
-	background-color: rgba(175, 184, 193, 0.2);
-	border-radius: 6px;
+:not(pre) > code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
 }
 
 .dark {
-	color-scheme: dark;
+  color-scheme: dark;
 }
 
 html {
-	height: 100%;
-	font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  height: 100%;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
 .copy-code {

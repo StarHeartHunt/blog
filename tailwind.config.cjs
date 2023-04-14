@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -25,7 +25,8 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+      mono: [...defaultTheme.fontFamily.mono],
+      fira: ['Fira Code', ...defaultTheme.fontFamily.mono],
       source: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
       'ubuntu-mono': ['Ubuntu Mono', ...defaultTheme.fontFamily.mono],
     },
