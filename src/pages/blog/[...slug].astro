@@ -1,7 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
-import TOC from './toc.astro';
+import TableOfContent from '../../components/TableOfContent.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -54,6 +54,6 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render();
   }
 </script>
 <BlogPost {...post.data} minutesRead={remarkPluginFrontmatter.minutesRead}>
-  <TOC headings={headings} />
+  {headings && headings.length != 0 && <TableOfContent headings={headings} />}
   <Content />
 </BlogPost>
