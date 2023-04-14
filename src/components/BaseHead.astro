@@ -1,6 +1,7 @@
 ---
 import fontsURL from '../styles/fonts.css?url';
 import globalURL from '../styles/global.css?url';
+import codeURL from '../styles/code.css?url';
 
 export interface Props {
   title: string;
@@ -28,8 +29,9 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta name="description" content={description} />
 
 <!-- Global Stylesheets -->
-<link rel="preload stylesheet" href={globalURL} as="style">
-<link rel="preload stylesheet" href={fontsURL} as="style">
+<link rel="preload stylesheet" href={globalURL} as="style" />
+<link rel="preload stylesheet" href={fontsURL} as="style" />
+<link rel="preload stylesheet" href={codeURL} as="style" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -47,4 +49,10 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 
 <!-- Preloads -->
 <link rel="preload" href="/fonts/inter-roman-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/inter-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link
+  rel="preload"
+  href="/fonts/inter-italic-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
