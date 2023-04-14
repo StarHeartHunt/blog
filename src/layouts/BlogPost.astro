@@ -33,9 +33,7 @@ const { title, description, pubDate, updatedDate, minutesRead } = Astro.props;
   <body class="antialiased">
     <Header />
     <main>
-      <article
-        class="dark:prose-dark prose prose-cyan mx-auto px-6 pb-28 md:px-8 xl:px-12"
-      >
+      <article class="dark:prose-dark prose prose-cyan mx-auto px-6 pb-28 md:px-8 xl:px-12">
         <FormattedDate date={pubDate} />
         {
           updatedDate && (

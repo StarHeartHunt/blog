@@ -11,18 +11,19 @@ const { headings } = Astro.props;
     <h5 class="mb-4 text-sm font-semibold leading-6 text-slate-900 dark:text-slate-100">
       On this page
     </h5>
-    <ul class="text-slate-700 text-sm leading-6">
+    <ul class="text-sm leading-6 text-slate-700">
       {
-        headings.map((heading: MarkdownHeading) => (
-          <li>
-            <a
-              href={'#' + heading.slug}
-              class="block py-1 font-medium hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))
+        headings &&
+          headings.map((heading: MarkdownHeading) => (
+            <li>
+              <a
+                href={'#' + heading.slug}
+                class="block py-1 font-medium hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))
       }
     </ul>
   </div>
