@@ -18,7 +18,10 @@ const { headings } = Astro.props;
             <li>
               <a
                 href={'#' + heading.slug}
-                class="block py-1 font-medium hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
+                class={
+                  'block py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300' +
+                  (heading.depth == 2 ? ' font-medium' : '')
+                }
               >
                 {heading.text}
               </a>
