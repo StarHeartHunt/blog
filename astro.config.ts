@@ -1,6 +1,6 @@
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
-import react from '@astrojs/react';
+import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
@@ -52,11 +52,19 @@ export default defineConfig({
               ];
             }
           },
-          onVisitHighlightedLine(node: { properties: { className: string[] } }) {
+          onVisitHighlightedLine(node: {
+            properties: {
+              className: string[];
+            };
+          }) {
             // Each line node by default has `class="line"`.
             node.properties.className.push('highlighted');
           },
-          onVisitHighlightedWord(node: { properties: { className: string[] } }) {
+          onVisitHighlightedWord(node: {
+            properties: {
+              className: string[];
+            };
+          }) {
             // Each word node has no className by default.
             node.properties.className = ['word'];
           },
@@ -68,7 +76,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     tailwind(),
-    react(),
+    preact(),
     compress({
       css: true,
       html: {
