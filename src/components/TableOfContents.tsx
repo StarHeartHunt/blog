@@ -14,7 +14,7 @@ const TableOfContents = ({ headings }: Props) => {
 
   useEffect(() => {
     const setCurrent: IntersectionObserverCallback = (entries) => {
-			for (const entry of entries) {
+      for (const entry of entries) {
         if (entry.isIntersecting) {
           setCurrentHeading({
             slug: entry.target.id,
@@ -34,18 +34,13 @@ const TableOfContents = ({ headings }: Props) => {
 
     const headingsObserver = new IntersectionObserver(setCurrent, observerOptions);
     // Observe all the headings in the main page content.
-    document.querySelectorAll('article :is(h1,h2,h3,h4)[id]').forEach((h) => headingsObserver.observe(h));
+    document
+      .querySelectorAll('article :is(h1,h2,h3,h4)[id]')
+      .forEach((h) => headingsObserver.observe(h));
 
     // Stop observing when the component is unmounted.
     return () => headingsObserver.disconnect();
   }, []);
-
-  const onLinkClick = (e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
-    setCurrentHeading({
-      slug: e.currentTarget.getAttribute('href')!.replace('#', ''),
-      text: e.currentTarget.textContent || '',
-    });
-  };
 
   return (
     <div className="not-prose fixed bottom-0 right-[max(0px,calc(50%-45rem))] top-[3.8125rem] z-20 hidden w-[19.5rem] overflow-y-auto py-10 xl:block">
@@ -65,7 +60,12 @@ const TableOfContents = ({ headings }: Props) => {
                 } ${[1, 2].includes(heading.depth) ? 'font-medium' : ''} ${
                   heading.depth > 2 ? 'group flex items-start py-1' : ''
                 }`.trim()}
-                onClick={onLinkClick}
+                onClick={(e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
+                  setCurrentHeading({
+                    slug: e.currentTarget.getAttribute('href')!.replace('#', ''),
+                    text: e.currentTarget.textContent || '',
+                  });
+                }}
               >
                 {heading.depth > 2 && (
                   <svg
