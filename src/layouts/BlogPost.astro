@@ -42,8 +42,7 @@ const { title, description, pubDate, updatedDate, minutesRead } = Astro.props;
             </div>
           )
         }
-        ·
-        {minutesRead}
+        {minutesRead ? ` · ${minutesRead}` : ''}
         <h1 class="title">{title}</h1>
         <hr />
         <slot />
