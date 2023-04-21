@@ -1,7 +1,5 @@
 ---
-import fontsURL from '../styles/fonts.css?url';
-import globalURL from '../styles/global.css?url';
-import codeURL from '../styles/code.css?url';
+import '../styles/global.css';
 
 export interface Props {
   title: string;
@@ -27,11 +25,6 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-
-<!-- Global Stylesheets -->
-<link rel="preload stylesheet" href={globalURL} as="style" />
-<link rel="preload stylesheet" href={fontsURL} as="style" />
-<link rel="preload stylesheet" href={codeURL} as="style" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
