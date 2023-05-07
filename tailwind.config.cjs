@@ -7,6 +7,9 @@ module.exports = {
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
+            'h2, h3, h4': {
+              'scroll-margin-top': 'var(--scroll-mt)',
+            },
             a: {
               'text-decoration': 'none',
             },
