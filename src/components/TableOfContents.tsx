@@ -32,7 +32,10 @@ const TableOfContents = ({ headings }: Props) => {
       threshold: 1,
     };
 
-    const headingsObserver = new IntersectionObserver(setCurrent, observerOptions);
+    const headingsObserver = new IntersectionObserver(
+      setCurrent,
+      observerOptions
+    );
     // Observe all the headings in the main page content.
     document
       .querySelectorAll('article :is(h1,h2,h3,h4)[id]')
@@ -62,7 +65,9 @@ const TableOfContents = ({ headings }: Props) => {
                 }`.trim()}
                 onClick={(e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
                   setCurrentHeading({
-                    slug: e.currentTarget.getAttribute('href')!.replace('#', ''),
+                    slug: e.currentTarget
+                      .getAttribute('href')!
+                      .replace('#', ''),
                     text: e.currentTarget.textContent || '',
                   });
                 }}

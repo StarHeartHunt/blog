@@ -20,7 +20,9 @@ html {
   padding-right: 0.23em;
   font-weight: 500;
   opacity: 0;
-  transition: color 0.25s, opacity 0.25s;
+  transition:
+    color 0.25s,
+    opacity 0.25s;
 }
 
 h1:hover .heading-anchor,
