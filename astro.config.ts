@@ -7,6 +7,8 @@ import compress from 'astro-compress';
 import { defineConfig } from 'astro/config';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import remarkCollapse from 'remark-collapse';
+import remarkToc from 'remark-toc';
 import { remarkReadingTime } from './src/utils/frontmatter';
 
 // https://astro.build/config
@@ -17,7 +19,16 @@ export default defineConfig({
     shikiConfig: {
       theme: 'one-dark-pro',
     },
-    remarkPlugins: [remarkReadingTime],
+    remarkPlugins: [
+      remarkToc,
+      [
+        remarkCollapse,
+        {
+          test: 'Table of contents',
+        },
+      ],
+      remarkReadingTime,
+    ],
     rehypePlugins: [
       rehypeHeadingIds,
       [
