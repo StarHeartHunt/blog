@@ -11,21 +11,26 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="antialiased">
     <Header />
-    <main class="dark:prose-dark prose prose-cyan mx-auto min-h-screen px-6 md:px-8 xl:px-12">
+    <main
+      class="dark:prose-dark prose prose-cyan mx-auto min-h-screen px-6 md:px-8 xl:px-12"
+    >
       <section>
         <ul>
           {
             posts.map((post) => (
               <li>
-                <FormattedDate date={post.data.pubDate} />
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                <div>
+                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                  <br />
+                  <FormattedDate date={post.data.pubDate} />
+                </div>
               </li>
             ))
           }
