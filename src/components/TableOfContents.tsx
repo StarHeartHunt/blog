@@ -1,6 +1,6 @@
 import type { MarkdownHeading } from '@astrojs/markdown-remark';
-import { useEffect, useState } from 'preact/hooks';
 import type { JSX } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 
 interface Props {
   headings: MarkdownHeading[];
