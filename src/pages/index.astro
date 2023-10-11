@@ -3,9 +3,9 @@ import { getEntry } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import BlogPost from '../layouts/BlogPost.astro';
 
-const graceHopperProfile = await getEntry('blog', 'about');
+const profile = await getEntry('blog', 'about');
 
-const { Content } = await graceHopperProfile.render();
+const { Content } = await profile.render();
 ---
 
 <BlogPost
