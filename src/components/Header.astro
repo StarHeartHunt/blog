@@ -5,11 +5,9 @@ import { SITE_TITLE } from '../consts';
 
 <header class="sticky inset-0 top-0 z-10 mb-8">
   <nav
-    class="flex justify-center supports-backdrop-blur:bg-white/60 h-max w-full max-w-full bg-white/95 px-4 py-2 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:z-50 lg:border-b lg:border-slate-900/10"
+    class="flex justify-center supports-backdrop-blur:bg-white/60 h-max w-full max-w-full bg-white/95 px-6 md:px-8 xl:px-12 py-2 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:z-50 lg:border-b lg:border-slate-900/10"
   >
-    <div
-      class="flex items-center w-full text-gray-900 max-w-[65ch] px-6 md:px-8 xl:px-12"
-    >
+    <div class="flex items-center w-full text-gray-900">
       <a
         href="/"
         class="block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
@@ -17,7 +15,7 @@ import { SITE_TITLE } from '../consts';
         {SITE_TITLE}
       </a>
       <ul class="ml-auto flex items-center gap-6">
-        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink
           href="https://github.com/StarHeartHunt/blog"
           target="_blank"
