@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import stylesUrl from '../styles/global.css?url';
 
 export interface Props {
   title: string;
@@ -33,6 +33,8 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
   type="font/woff2"
   crossorigin
 />
+<link rel="preload" href={stylesUrl} as="style">
+<link rel="stylesheet" href={stylesUrl}>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
