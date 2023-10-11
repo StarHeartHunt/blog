@@ -1,0 +1,34 @@
+---
+import IconLink from './IconLink.astro';
+import SimpleIconsGithub from '~icons/simple-icons/github';
+import SimpleIconsTwitter from '~icons/simple-icons/twitter';
+import SimpleIconsBilibili from '~icons/simple-icons/bilibili';
+
+const socialLinks = [
+  {
+    icon: SimpleIconsGithub,
+    link: 'https://github.com/StarHeartHunt',
+    name: 'GitHub',
+  },
+  {
+    icon: SimpleIconsTwitter,
+    link: 'https://twitter.com/StarHeartHunt',
+    name: 'Twitter',
+  },
+  {
+    icon: SimpleIconsBilibili,
+    link: 'https://space.bilibili.com/8499524',
+    name: '哔哩哔哩',
+  },
+];
+---
+
+<p class="flex gap-3 flex-wrap">
+  {
+    socialLinks.map(({ icon, link, name }) => (
+      <IconLink Icon={icon} link={link}>
+        {name}
+      </IconLink>
+    ))
+  }
+</p>

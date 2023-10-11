@@ -4,15 +4,12 @@ import type { HTMLAttributes } from 'astro/types';
 type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
-
-const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 ---
 
 <li
   class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased"
 >
-  <a class:list={[className, 'flex items-center']} href={href} {...props}
-    ><slot /></a
-  >
+  <a class:list={[className, 'flex items-center']} href={href} {...props}>
+    <slot />
+  </a>
 </li>

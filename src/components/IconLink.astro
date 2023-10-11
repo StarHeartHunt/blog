@@ -1,0 +1,8 @@
+---
+const { Icon, link } = Astro.props;
+---
+
+<a class="flex wrap gap-1 items-center" href={link} target="_blank" rel="noopener">
+  <span><Icon /></span>
+  <slot />
+</a>

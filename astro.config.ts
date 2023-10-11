@@ -9,6 +9,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import remarkCollapse from 'remark-collapse';
 import remarkToc from 'remark-toc';
+import Icons from 'unplugin-icons/vite';
 import { remarkReadingTime } from './src/utils/frontmatter';
 
 // https://astro.build/config
@@ -81,6 +82,13 @@ export default defineConfig({
           },
         },
       ],
+    ],
+  },
+  vite: {
+    plugins: [
+      Icons({
+        compiler: 'astro',
+      }),
     ],
   },
   integrations: [
