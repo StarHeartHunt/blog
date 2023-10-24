@@ -1,6 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import UilGithubAlt from '~icons/uil/github-alt';
 ---
 
 <header class="sticky inset-0 top-0 z-10 mb-8">
@@ -14,13 +15,13 @@ import { SITE_TITLE } from '../consts';
       >
         {SITE_TITLE}
       </a>
-      <ul class="ml-auto flex items-center gap-6">
+      <ul class="ml-auto flex items-center gap-5">
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink
           href="https://github.com/StarHeartHunt/blog"
           target="_blank"
         >
-          GitHub
+          <UilGithubAlt />
         </HeaderLink>
       </ul>
     </div>
