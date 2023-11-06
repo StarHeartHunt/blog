@@ -1,0 +1,25 @@
+---
+import IconLink from './IconLink.astro';
+
+export interface Link {
+  icon: (props: astroHTML.JSX.SVGAttributes) => astroHTML.JSX.Element;
+  link: string;
+  name: string;
+}
+
+export interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="flex gap-3 flex-wrap -mt-2">
+  {
+    links.map(({ icon, link, name }) => (
+      <IconLink Icon={icon} link={link}>
+        {name}
+      </IconLink>
+    ))
+  }
+</div>
