@@ -7,7 +7,7 @@ const { href, class: className, ...props } = Astro.props;
 ---
 
 <li
-  class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased"
+  class="block p-1 font-sans font-normal leading-normal text-inherit antialiased"
 >
   <a class:list={[className, 'flex items-center']} href={href} {...props}>
     <slot />
