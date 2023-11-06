@@ -16,6 +16,7 @@ module.exports = {
       version: '16.0',
     },
   },
+  globals: { astroHTML: true },
   overrides: [
     {
       files: ['*.astro'],
