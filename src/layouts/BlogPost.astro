@@ -6,7 +6,7 @@ const { title, description, pubDate, updatedDate, minutesRead } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <article>
+  <article class="mx-auto prose prose-cyan dark:prose-invert">
     {pubDate && <FormattedDate date={pubDate} />}
     {
       updatedDate && (
