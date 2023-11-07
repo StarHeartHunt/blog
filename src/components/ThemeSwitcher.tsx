@@ -1,4 +1,7 @@
-import { useEffect, useState, type ReactElement } from 'react';
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { useState, type ReactElement } from 'react';
 
 const isBrowserDefaultDark = () =>
   window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -35,6 +38,7 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
       Math.max(y, innerHeight - y)
     );
     // @ts-expect-error: Transition API
+    // eslint-disable-next-line @typescript-eslint/require-await
     const transition = document.startViewTransition(async () => {
       setTheme(theme === 'dark' ? 'light' : 'dark');
       updateClass();
