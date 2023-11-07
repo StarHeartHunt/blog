@@ -1,6 +1,6 @@
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
-import preact from '@astrojs/preact';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
@@ -86,6 +86,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
+      Icons({ compiler: 'jsx', jsx: 'react' }),
       Icons({
         compiler: 'astro',
       }),
@@ -95,16 +96,14 @@ export default defineConfig({
     mdx(),
     sitemap(),
     tailwind(),
-    preact(),
+    react(),
     compress({
-      css: true,
-      html: {
-        removeAttributeQuotes: false,
-      },
-      img: false,
-      js: true,
-      svg: false,
-      logger: 1,
+      CSS: true,
+      HTML: true,
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1,
     }),
   ],
 });
