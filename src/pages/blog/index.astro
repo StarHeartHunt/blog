@@ -9,20 +9,45 @@ const posts = (
     return data.hidden !== true;
   })
 ).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+let yearPosts: Record<string, typeof posts> = {};
+posts.forEach((post) => {
+  const year = post.data.pubDate.getFullYear();
+  if (yearPosts[year] && yearPosts[year].length) {
+    yearPosts[year] = [post, ...yearPosts[year]];
+  } else {
+    yearPosts[year] = [post];
+  }
+});
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <div class="mx-auto prose prose-cyan">
     <ul class="slide-enter-content">
       {
-        posts.map((post) => (
-          <li>
-            <div>
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-              <br />
-              <FormattedDate date={post.data.pubDate} />
+        Object.entries(yearPosts).map(([key, posts]) => (
+          <>
+            <div
+              class="select-none relative h-20 pointer-events-none slide-enter"
+              style="--enter-stage: -2; --enter-step: 60ms;"
+            >
+              <span
+                class="text-[8em] text-transparent absolute -left-12 -top-8 font-bold opacity-10"
+                style="-webkit-text-stroke-width:2px;--tw-text-stroke-opacity: 1;-webkit-text-stroke-color: rgb(170 170 170 / var(--tw-text-stroke-opacity))"
+              >
+                {key}
+              </span>
             </div>
-          </li>
+            {posts.map((post) => (
+              <div>
+                <li>
+                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                  <br />
+                  <FormattedDate date={post.data.pubDate} />
+                </li>
+              </div>
+            ))}
+          </>
         ))
       }
     </ul>
