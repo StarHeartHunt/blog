@@ -86,7 +86,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      Icons({ compiler: 'jsx', jsx: 'react' }),
       Icons({
         compiler: 'astro',
       }),
