@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import getReadingTime from 'reading-time';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -39,11 +40,13 @@ posts.forEach((post) => {
               </span>
             </div>
             {posts.map((post) => (
-              <div>
-                <li>
+              <div class="slide-enter">
+                <li class="flex flex-col md:flex-row gap-2 md:items-center mb-6 mt-2">
                   <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-                  <br />
-                  <FormattedDate date={post.data.pubDate} />
+                  <div class="flex gap-2 items-center">
+                    <FormattedDate date={post.data.pubDate} />
+                    {`· ${getReadingTime(post.body).text.replace(' read', '')}`}
+                  </div>
                 </li>
               </div>
             ))}
