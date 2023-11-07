@@ -6,7 +6,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const posts = (
   await getCollection('blog', ({ data }) => {
-    return data.hideInList !== true;
+    return data.hidden !== true;
   })
 ).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
