@@ -4,7 +4,7 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "dev": "astro dev",
+    "start": "astro dev",
     "format": "pnpm run format:code",
     "format:ci": "pnpm run format:imports && pnpm run format:code",
     "format:code": "prettier --write . --cache --plugin-search-dir=.",
@@ -12,8 +12,7 @@
     "format:package": "pnpx sort-package-json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "astro preview",
-    "start": "astro dev"
+    "preview": "astro preview"
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^3.3.0",

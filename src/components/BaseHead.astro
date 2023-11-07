@@ -39,6 +39,16 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
+<script>
+  (function () {
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const setting = localStorage.getItem('starheart-color-scheme') || 'auto';
+    if (setting === 'dark' || (prefersDark && setting !== 'light'))
+      document.documentElement.classList.toggle('dark', true);
+  })();
+</script>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 

@@ -1,7 +1,10 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import RiMoonLine from '~icons/ri/moon-line';
+import RiSunLine from '~icons/ri/sun-line';
 import UilGithubAlt from '~icons/uil/github-alt';
+import ThemeSwitcher from '../components/ThemeSwitcher.tsx';
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
 ---
 
 <header class="sticky inset-0 top-0 z-10 mb-8">
@@ -22,6 +25,12 @@ import UilGithubAlt from '~icons/uil/github-alt';
           target="_blank"
         >
           <UilGithubAlt />
+        </HeaderLink>
+        <HeaderLink>
+          <ThemeSwitcher client:only>
+            <RiSunLine slot="dayIcon" />
+            <RiMoonLine slot="nightIcon" />
+          </ThemeSwitcher>
         </HeaderLink>
       </ul>
     </div>
