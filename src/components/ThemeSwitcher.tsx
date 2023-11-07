@@ -15,7 +15,7 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
   const [theme, setTheme] = useState(isBrowserDefaultDark() ? 'dark' : 'light');
 
   function updateClass() {
-    if (theme === 'dark') document.documentElement.classList.add('dark');
+    if (theme === 'light') document.documentElement.classList.add('dark');
     else document.documentElement.classList.remove('dark');
   }
 
@@ -50,13 +50,13 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
       ];
       document.documentElement.animate(
         {
-          clipPath: theme === 'dark' ? [...clipPath].reverse() : clipPath,
+          clipPath: theme === 'light' ? [...clipPath].reverse() : clipPath,
         },
         {
           duration: 400,
           easing: 'ease-out',
           pseudoElement:
-            theme === 'dark'
+            theme === 'light'
               ? '::view-transition-old(root)'
               : '::view-transition-new(root)',
         }
@@ -67,7 +67,7 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
   return (
     <>
       <div onClick={(e) => toggleDark(e.nativeEvent)}>
-        {theme === 'dark' ? dayIcon : nightIcon}
+        {theme === 'dark' ? nightIcon : dayIcon}
       </div>
     </>
   );
