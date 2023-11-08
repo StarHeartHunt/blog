@@ -21,7 +21,7 @@
 }
 
 [data-rehype-pretty-code-fragment] .highlighted::after {
-  content: ' +';
+  content: " +";
   display: grid;
   align-items: center;
   width: calc(100% + 2.5rem);
@@ -45,8 +45,8 @@
 [data-rehype-pretty-code-fragment] code {
   display: block;
   width: 100%;
-  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   counter-reset: line;
 }
 
@@ -78,13 +78,13 @@
 }
 
 [data-rehype-pretty-code-fragment]
-  code[data-line-numbers-max-digits='2']
+  code[data-line-numbers-max-digits="2"]
   > .line::before {
   width: 2rem;
 }
 
 [data-rehype-pretty-code-fragment]
-  code[data-line-numbers-max-digits='3']
+  code[data-line-numbers-max-digits="3"]
   > .line::before {
   width: 3rem;
 }

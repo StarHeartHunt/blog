@@ -1,9 +1,9 @@
-@import 'fonts.css';
-@import 'code.css';
+@import "fonts.css";
+@import "code.css";
 
 html {
   height: 100%;
-  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 .dark {
@@ -11,7 +11,7 @@ html {
 }
 
 .heading-anchor:before {
-  content: '#';
+  content: "#";
 }
 
 .heading-anchor {

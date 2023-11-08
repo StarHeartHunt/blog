@@ -1,31 +1,31 @@
-import { rehypeHeadingIds } from '@astrojs/markdown-remark';
-import mdx from '@astrojs/mdx';
-import react from '@astrojs/react';
-import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
-import compress from 'astro-compress';
-import { defineConfig } from 'astro/config';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
-import remarkCollapse from 'remark-collapse';
-import remarkToc from 'remark-toc';
-import Icons from 'unplugin-icons/vite';
-import { remarkReadingTime } from './src/utils/frontmatter';
+import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import compress from "astro-compress";
+import { defineConfig } from "astro/config";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import remarkCollapse from "remark-collapse";
+import remarkToc from "remark-toc";
+import Icons from "unplugin-icons/vite";
+import { remarkReadingTime } from "./src/utils/frontmatter";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://baka.icu',
+  site: "https://baka.icu",
   markdown: {
     syntaxHighlight: false,
     shikiConfig: {
-      theme: 'one-dark-pro',
+      theme: "one-dark-pro",
     },
     remarkPlugins: [
       remarkToc,
       [
         remarkCollapse,
         {
-          test: 'Table of contents',
+          test: "Table of contents",
         },
       ],
       remarkReadingTime,
@@ -35,20 +35,20 @@ export default defineConfig({
       [
         rehypeAutolinkHeadings,
         {
-          behavior: 'append',
+          behavior: "append",
           properties: {
-            className: ['heading-anchor'],
+            className: ["heading-anchor"],
           },
           content: {
-            type: 'text',
-            value: '\u200B',
+            type: "text",
+            value: "\u200B",
           },
         },
       ],
       [
         rehypePrettyCode,
         {
-          theme: 'one-dark-pro',
+          theme: "one-dark-pro",
           keepBackground: true,
           // Callback hooks to add custom logic to nodes when visiting
           // them.
@@ -58,8 +58,8 @@ export default defineConfig({
             if (node.children.length === 0) {
               node.children = [
                 {
-                  type: 'text',
-                  value: ' ',
+                  type: "text",
+                  value: " ",
                 },
               ];
             }
@@ -70,7 +70,7 @@ export default defineConfig({
             };
           }) {
             // Each line node by default has `class="line"`.
-            node.properties.className.push('highlighted');
+            node.properties.className.push("highlighted");
           },
           onVisitHighlightedWord(node: {
             properties: {
@@ -78,7 +78,7 @@ export default defineConfig({
             };
           }) {
             // Each word node has no className by default.
-            node.properties.className = ['word'];
+            node.properties.className = ["word"];
           },
         },
       ],
@@ -87,7 +87,7 @@ export default defineConfig({
   vite: {
     plugins: [
       Icons({
-        compiler: 'astro',
+        compiler: "astro",
       }),
     ],
   },

@@ -1,4 +1,4 @@
-import type { MarkdownHeading } from 'astro';
+import type { MarkdownHeading } from "astro";
 export interface TocItem extends MarkdownHeading {
   children: TocItem[];
 }
@@ -14,9 +14,9 @@ function diveChildren(item: TocItem, depth: number): TocItem[] {
 
 export default function generateToc(
   headings: MarkdownHeading[],
-  title = 'Overview'
+  title = "Overview",
 ) {
-  const overview = { depth: 2, slug: 'overview', text: title };
+  const overview = { depth: 2, slug: "overview", text: title };
   headings = [
     overview,
     ...headings.filter(({ depth }) => depth > 1 && depth < 4),

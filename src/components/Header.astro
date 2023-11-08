@@ -27,7 +27,7 @@ import HeaderLink from './HeaderLink.astro';
           <UilGithubAlt />
         </HeaderLink>
         <HeaderLink>
-          <ThemeSwitcher client:only>
+          <ThemeSwitcher client:load>
             <RiSunLine slot="dayIcon" />
             <RiMoonLine slot="nightIcon" />
           </ThemeSwitcher>
