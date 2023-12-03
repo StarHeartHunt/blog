@@ -3,9 +3,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useEffect, useState, type ReactElement } from "react";
 
-const isBrowserDefaultDark = () =>
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
-
 type Props = {
   dayIcon?: ReactElement;
   nightIcon?: ReactElement;
@@ -13,14 +10,16 @@ type Props = {
 
 export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    setTheme(isBrowserDefaultDark() ? "dark" : "light");
-  }, []);
 
-  function updateClass() {
-    if (theme === "light") document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
+  function updateClass(mode: string) {
+    if (mode === "light") document.documentElement.classList.remove("dark");
+    else document.documentElement.classList.add("dark");
   }
+
+  useEffect(() => {
+    const toTheme = localStorage.getItem("starheart-color-scheme") || "light";
+    setTheme(toTheme);
+  }, []);
 
   function toggleDark(event: MouseEvent) {
     const isAppearanceTransition =
@@ -29,8 +28,9 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!isAppearanceTransition) {
-      setTheme(theme === "dark" ? "light" : "dark");
-      updateClass();
+      const toTheme = theme === "dark" ? "light" : "dark";
+      setTheme(toTheme);
+      updateClass(toTheme);
       return;
     }
 
@@ -42,8 +42,10 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
     );
     // @ts-expect-error: Transition API
     const transition = document.startViewTransition(() => {
-      setTheme(theme === "dark" ? "light" : "dark");
-      updateClass();
+      const toTheme = theme === "dark" ? "light" : "dark";
+      setTheme(toTheme);
+      localStorage.setItem("starheart-color-scheme", toTheme);
+      updateClass(toTheme);
     });
     transition.ready.then(() => {
       const clipPath = [
@@ -68,7 +70,8 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
 
   return (
     <div onClick={(e) => toggleDark(e.nativeEvent)}>
-      {theme === "dark" ? nightIcon : dayIcon}
+      {dayIcon}
+      {nightIcon}
     </div>
   );
 }

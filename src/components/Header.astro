@@ -1,10 +1,10 @@
 ---
-import RiMoonLine from '~icons/ri/moon-line';
-import RiSunLine from '~icons/ri/sun-line';
-import UilGithubAlt from '~icons/uil/github-alt';
-import ThemeSwitcher from '../components/ThemeSwitcher.tsx';
-import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+import RiMoonLine from "~icons/ri/moon-line";
+import RiSunLine from "~icons/ri/sun-line";
+import UilGithubAlt from "~icons/uil/github-alt";
+import ThemeSwitcher from "../components/ThemeSwitcher.tsx";
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header class="sticky inset-0 top-0 z-10 mb-8">
@@ -28,8 +28,8 @@ import HeaderLink from './HeaderLink.astro';
         </HeaderLink>
         <HeaderLink>
           <ThemeSwitcher client:load>
-            <RiSunLine slot="dayIcon" />
-            <RiMoonLine slot="nightIcon" />
+            <RiSunLine slot="dayIcon" class="dark:hidden" />
+            <RiMoonLine slot="nightIcon" class="hidden dark:block" />
           </ThemeSwitcher>
         </HeaderLink>
       </ul>
