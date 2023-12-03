@@ -11,9 +11,18 @@ type Props = {
 export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
   const [theme, setTheme] = useState("light");
 
-  function updateClass(mode: string) {
-    if (mode === "light") document.documentElement.classList.remove("dark");
+  function updateClass(toTheme: string) {
+    if (toTheme === "light") document.documentElement.classList.remove("dark");
     else document.documentElement.classList.add("dark");
+  }
+
+  const reverseTheme = () => (theme === "dark" ? "light" : "dark");
+
+  function syncTheme() {
+    const toTheme = reverseTheme();
+    setTheme(toTheme);
+    localStorage.setItem("starheart-color-scheme", toTheme);
+    updateClass(toTheme);
   }
 
   useEffect(() => {
@@ -28,9 +37,7 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!isAppearanceTransition) {
-      const toTheme = theme === "dark" ? "light" : "dark";
-      setTheme(toTheme);
-      updateClass(toTheme);
+      syncTheme();
       return;
     }
 
@@ -41,12 +48,7 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
       Math.max(y, innerHeight - y),
     );
     // @ts-expect-error: Transition API
-    const transition = document.startViewTransition(() => {
-      const toTheme = theme === "dark" ? "light" : "dark";
-      setTheme(toTheme);
-      localStorage.setItem("starheart-color-scheme", toTheme);
-      updateClass(toTheme);
-    });
+    const transition = document.startViewTransition(() => syncTheme());
     transition.ready.then(() => {
       const clipPath = [
         `circle(0px at ${x}px ${y}px)`,
