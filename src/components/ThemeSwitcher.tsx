@@ -26,8 +26,12 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
   }
 
   useEffect(() => {
-    const toTheme = localStorage.getItem("starheart-color-scheme") || "light";
-    setTheme(toTheme);
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const setting = localStorage.getItem("starheart-color-scheme") || "auto";
+    if (setting === "dark" || (prefersDark && setting !== "light"))
+      setTheme("dark");
   }, []);
 
   function toggleDark(event: MouseEvent) {
