@@ -12,7 +12,7 @@ const { href, class: className, ...props } = Astro.props;
   <a
     class:list={[
       className,
-      "flex items-center cursor-pointer no-underline color-inherit transition-opacity ease-[cubic-bezier(0.25, 0.1, 0.25, 1.0)] duration-200 opacity-60 hover:opacity-100 outline-none",
+      "flex items-center cursor-pointer no-underline color-inherit transition-opacity ease-[ease] duration-200 opacity-60 hover:opacity-100 outline-none",
     ]}
     href={href}
     {...props}
