@@ -6,6 +6,31 @@ heroImage: "/placeholder-hero.jpg"
 hidden: true
 ---
 
+import IconLinkGroup from "../../components/IconLinkGroup.astro";
+import SimpleIconsGithub from "~icons/simple-icons/github";
+import SimpleIconsTwitter from "~icons/simple-icons/twitter";
+import SimpleIconsBilibili from "~icons/simple-icons/bilibili";
+
+export const links = [
+  {
+    icon: SimpleIconsGithub,
+    link: "https://github.com/StarHeartHunt",
+    name: "GitHub",
+  },
+  {
+    icon: SimpleIconsTwitter,
+    link: "https://twitter.com/StarHeartHunt",
+    name: "Twitter",
+  },
+  {
+    icon: SimpleIconsBilibili,
+    link: "https://space.bilibili.com/8499524",
+    name: "哔哩哔哩",
+  },
+];
+
 Hi, I am StarHeart, the core developer of Mooncell Wiki and PRTS Wiki.
 
 Find me on
+
+<IconLinkGroup links={links} />
