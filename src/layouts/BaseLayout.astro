@@ -1,7 +1,7 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 const { title, description } = Astro.props;
 ---
@@ -13,11 +13,9 @@ const { title, description } = Astro.props;
 
   <body class="antialiased bg-white dark:bg-gray-900">
     <Header />
-    <main
-      class="min-h-screen px-6 md:px-8 xl:px-12"
-    >
+    <main class="px-6 md:px-8 xl:px-12">
       <slot />
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>

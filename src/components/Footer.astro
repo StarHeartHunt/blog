@@ -2,19 +2,23 @@
 const today = new Date();
 ---
 
-<footer class="mt-8 w-full py-8">
-  <p
-    class="block text-center text-sm font-normal leading-relaxed text-slate-500"
-  >
-    &copy; 2003-{today.getFullYear()} StarHeartHunt. All rights reserved.
-  </p>
-  <p
-    class="block text-center text-sm font-normal leading-relaxed text-slate-500"
-  >
+<footer
+  class="mt-10 mb-6 prose m-auto flex flex-col slide-enter animate-delay-1200!"
+>
+  <span class="text-sm op50">
     <a
-      class="text-cyan-600 hover:text-cyan-500"
+      target="_blank"
+      href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      style="color: inherit;"
+      >CC BY-NC-SA 4.0
+    </a> 2003-PRESENT © StarHeartHunt. All rights reserved.
+  </span>
+  <span class="text-sm op50 mt-2">
+    <a
+      class="text-cyan-600 hover:text-cyan-500 ease-in-out duration-300"
       href="https://beian.miit.gov.cn/"
-      target="_blank">粤ICP备2021063081号-1</a
-    >
-  </p>
+      target="_blank"
+      >粤ICP备2021063081号-1
+    </a>
+  </span>
 </footer>

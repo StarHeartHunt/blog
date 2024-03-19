@@ -1,5 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
@@ -35,5 +37,21 @@ module.exports = {
       "ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "animation-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        },
+      );
+    }),
+  ],
 };
