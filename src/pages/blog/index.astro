@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
-import getReadingTime from 'reading-time';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import getReadingTime from "reading-time";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const posts = (
-  await getCollection('blog', ({ data }) => {
+  await getCollection("blog", ({ data }) => {
     return data.hidden !== true;
   })
 ).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
@@ -23,7 +23,7 @@ posts.forEach((post) => {
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div class="mx-auto prose prose-cyan">
+  <div class="mx-auto prose prose-cyan mb-8">
     <ul class="slide-enter-content">
       {
         Object.entries(yearPosts).map(([key, posts]) => (
@@ -45,7 +45,7 @@ posts.forEach((post) => {
                   <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
                   <div class="flex gap-2 items-center">
                     <FormattedDate date={post.data.pubDate} />
-                    {`· ${getReadingTime(post.body).text.replace(' read', '')}`}
+                    {`· ${getReadingTime(post.body).text.replace(" read", "")}`}
                   </div>
                 </li>
               </div>
