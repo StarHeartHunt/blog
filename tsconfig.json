@@ -4,6 +4,11 @@
     "strictNullChecks": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["unplugin-icons/types/astro"]
+    "types": ["unplugin-icons/types/astro"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }

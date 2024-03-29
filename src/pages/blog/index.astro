@@ -1,9 +1,9 @@
 ---
+import FormattedDate from "@/components/FormattedDate.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import getReadingTime from "reading-time";
-import FormattedDate from "../../components/FormattedDate.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
-import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const posts = (
   await getCollection("blog", ({ data }) => {

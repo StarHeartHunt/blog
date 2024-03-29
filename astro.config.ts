@@ -5,12 +5,17 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 import { defineConfig } from "astro/config";
+import { dirname, resolve } from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import Icons from "unplugin-icons/vite";
+import { fileURLToPath } from "url";
 import { remarkReadingTime } from "./src/utils/frontmatter";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
@@ -85,6 +90,11 @@ export default defineConfig({
     ],
   },
   vite: {
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src"),
+      },
+    },
     plugins: [
       Icons({
         compiler: "astro",
