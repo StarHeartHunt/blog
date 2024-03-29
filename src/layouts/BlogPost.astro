@@ -1,6 +1,6 @@
 ---
-import FormattedDate from '../components/FormattedDate.astro';
-import BaseLayout from './BaseLayout.astro';
+import FormattedDate from "../components/FormattedDate.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 const { title, description, pubDate, updatedDate, minutesRead } = Astro.props;
 ---
@@ -15,7 +15,7 @@ const { title, description, pubDate, updatedDate, minutesRead } = Astro.props;
         </div>
       )
     }
-    {minutesRead ? ` · ${minutesRead}` : ''}
+    {minutesRead ? ` · ${minutesRead}` : ""}
     <h1>{title}</h1>
     <div class="slide-enter-content"><slot /></div>
   </article>
