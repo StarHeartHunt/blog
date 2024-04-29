@@ -34,7 +34,7 @@
     "cssnano": "^7.0.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-astro": "^0.34.0",
+    "eslint-plugin-astro": "^1.0.3",
     "eslint-plugin-react": "^7.34.1",
     "mdast-util-to-string": "^4.0.0",
     "organize-imports-cli": "^0.10.0",
