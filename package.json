@@ -31,7 +31,7 @@
     "astro": "^4.7.0",
     "astro-compress": "^2.2.22",
     "autoprefixer": "^10.4.19",
-    "cssnano": "^6.1.2",
+    "cssnano": "^7.0.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.34.0",
