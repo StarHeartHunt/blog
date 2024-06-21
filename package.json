@@ -19,7 +19,6 @@
   "devDependencies": {
     "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/mdx": "^3.1.0",
-    "@astrojs/react": "^3.5.0",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
@@ -56,5 +55,9 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
     "unplugin-icons": "^0.19.0"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^3.5.0",
+    "preact": "^10.22.0"
   }
 }

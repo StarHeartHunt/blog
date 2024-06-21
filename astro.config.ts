@@ -13,7 +13,7 @@ import remarkToc from "remark-toc";
 import Icons from "unplugin-icons/vite";
 import { fileURLToPath } from "url";
 import { remarkReadingTime } from "./src/utils/frontmatter";
-
+import preact from "@astrojs/preact";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -105,7 +105,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     tailwind(),
-    react(),
+    preact({ compat: true }),
     compress({
       CSS: true,
       HTML: true,

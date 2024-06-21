@@ -3,9 +3,8 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "jsxImportSource": "preact",
     "types": ["unplugin-icons/types/astro"],
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
