@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { useEffect, useState, type ReactElement } from "react";
+import { type Component } from "preact";
+import { useEffect, useState } from "preact/hooks";
 
 type Props = {
-  dayIcon?: ReactElement;
-  nightIcon?: ReactElement;
+  dayIcon?: Component;
+  nightIcon?: Component;
 };
 
 export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
@@ -75,7 +76,7 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
   }
 
   return (
-    <div onClick={(e) => toggleDark(e.nativeEvent)}>
+    <div onClick={toggleDark}>
       {dayIcon}
       {nightIcon}
     </div>

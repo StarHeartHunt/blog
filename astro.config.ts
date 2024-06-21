@@ -104,7 +104,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     tailwind(),
-    preact({ compat: true }),
+    preact(),
     compress({
       CSS: true,
       HTML: true,
