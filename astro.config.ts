@@ -1,6 +1,6 @@
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
-import react from "@astrojs/react";
+import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
@@ -13,7 +13,6 @@ import remarkToc from "remark-toc";
 import Icons from "unplugin-icons/vite";
 import { fileURLToPath } from "url";
 import { remarkReadingTime } from "./src/utils/frontmatter";
-import preact from "@astrojs/preact";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
