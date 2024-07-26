@@ -1,7 +1,7 @@
 {
   "name": "@starheart/blog",
   "version": "0.0.1",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.6.0",
   "private": true,
   "scripts": {
     "astro": "astro",
@@ -22,21 +22,21 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
-    "@iconify/json": "^2.2.229",
+    "@iconify/json": "^2.2.231",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "@typescript-eslint/parser": "^7.16.1",
-    "astro": "^4.12.1",
-    "astro-compress": "^2.2.28",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "astro": "^4.12.2",
+    "astro-compress": "^2.3.0",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.4",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.2.3",
-    "eslint-plugin-react": "^7.34.4",
+    "eslint-plugin-react": "^7.35.0",
     "mdast-util-to-string": "^4.0.0",
     "organize-imports-cli": "^0.10.0",
     "postcss-import": "^16.1.0",
@@ -50,14 +50,14 @@
     "rehype-pretty-code": "^0.13.2",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "rollup": "^4.18.1",
-    "shiki": "^1.10.3",
-    "tailwindcss": "^3.4.6",
-    "typescript": "^5.5.3",
+    "rollup": "^4.19.0",
+    "shiki": "^1.11.2",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4",
     "unplugin-icons": "^0.19.0"
   },
   "dependencies": {
     "@astrojs/preact": "^3.5.1",
-    "preact": "^10.22.1"
+    "preact": "^10.23.1"
   }
 }
