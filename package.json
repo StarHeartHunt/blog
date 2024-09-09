@@ -22,21 +22,21 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
-    "@iconify/json": "^2.2.243",
+    "@iconify/json": "^2.2.245",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "^4.15.1",
+    "astro": "^4.15.4",
     "astro-compress": "^2.3.1",
     "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.5",
+    "cssnano": "^7.0.6",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.2.3",
-    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react": "^7.35.2",
     "mdast-util-to-string": "^4.0.0",
     "organize-imports-cli": "^0.10.0",
     "postcss-import": "^16.1.0",
@@ -51,13 +51,13 @@
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "rollup": "^4.21.2",
-    "shiki": "^1.16.1",
+    "shiki": "^1.16.2",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
-    "unplugin-icons": "^0.19.2"
+    "unplugin-icons": "^0.19.3"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.5.2",
+    "@astrojs/preact": "^3.5.3",
     "preact": "^10.23.2"
   }
 }
