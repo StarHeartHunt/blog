@@ -1,7 +1,7 @@
 {
   "name": "@starheart/blog",
   "version": "0.0.1",
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@9.12.0",
   "private": true,
   "scripts": {
     "astro": "astro",
@@ -20,16 +20,16 @@
     "@astrojs/markdown-remark": "^5.2.0",
     "@astrojs/mdx": "^3.1.7",
     "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/sitemap": "^3.2.0",
     "@astrojs/tailwind": "^5.1.1",
-    "@iconify/json": "^2.2.255",
+    "@iconify/json": "^2.2.256",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "^4.15.10",
+    "astro": "^4.15.11",
     "astro-compress": "^2.3.1",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
@@ -51,13 +51,13 @@
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "rollup": "^4.24.0",
-    "shiki": "^1.21.0",
+    "shiki": "^1.21.1",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2",
     "unplugin-icons": "^0.19.3"
   },
   "dependencies": {
     "@astrojs/preact": "^3.5.3",
-    "preact": "^10.24.1"
+    "preact": "^10.24.2"
   }
 }
