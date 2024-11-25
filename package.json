@@ -22,14 +22,14 @@
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
-    "@iconify/json": "^2.2.274",
+    "@iconify/json": "^2.2.275",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "^4.16.13",
+    "astro": "^4.16.14",
     "astro-compress": "^2.3.5",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
@@ -50,14 +50,14 @@
     "rehype-pretty-code": "^0.14.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "rollup": "^4.27.3",
+    "rollup": "^4.27.4",
     "shiki": "^1.23.1",
     "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3",
+    "typescript": "^5.7.2",
     "unplugin-icons": "^0.20.1"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.5.3",
-    "preact": "^10.24.3"
+    "@astrojs/preact": "^3.5.4",
+    "preact": "^10.25.0"
   }
 }
