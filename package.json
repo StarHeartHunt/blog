@@ -20,16 +20,16 @@
     "@astrojs/preact": "^4.0.4",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
+    "@eslint/js": "^9.19.0",
     "@iconify/json": "^2.2.303",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.3",
-    "@typescript-eslint/eslint-plugin": "^8.23.0",
-    "@typescript-eslint/parser": "^8.23.0",
     "astro": "^5.2.5",
     "astro-compress": "^2.3.6",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-astro": "^1.3.1",
+    "globals": "^15.14.0",
     "mdast-util-to-string": "^4.0.0",
     "preact": "^10.25.4",
     "prettier": "^3.4.2",
@@ -44,6 +44,12 @@
     "shiki": "^2.3.1",
     "tailwindcss": "^4.0.3",
     "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0",
     "unplugin-icons": "^22.0.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "rehype-pretty-code": "patches/rehype-pretty-code.patch"
+    }
   }
 }
