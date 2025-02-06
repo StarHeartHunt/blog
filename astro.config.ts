@@ -2,7 +2,6 @@ import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 import { defineConfig } from "astro/config";
 import { dirname, resolve } from "path";
@@ -13,6 +12,7 @@ import remarkToc from "remark-toc";
 import Icons from "unplugin-icons/vite";
 import { fileURLToPath } from "url";
 import { remarkReadingTime } from "./src/utils/frontmatter";
+import tailwindcss from "@tailwindcss/vite";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -94,17 +94,13 @@ export default defineConfig({
         "@": resolve(__dirname, "./src"),
       },
     },
-    plugins: [
-      Icons({
-        compiler: "astro",
-      }),
-    ],
+    plugins: [Icons({
+      compiler: "astro",
+    }), tailwindcss()],
   },
   integrations: [
     mdx(),
     sitemap(),
-    tailwind(),
-    preact(),
     compress({
       CSS: true,
       HTML: true,
@@ -113,5 +109,6 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
+    preact(),
   ],
 });

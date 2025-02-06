@@ -1,5 +1,6 @@
-@import "fonts.css";
-@import "code.css";
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./code.css";
 
 html {
   height: 100%;
