@@ -1,4 +1,31 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@utility prose {
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: var(--scroll-mt);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--tw-prose-invert-links);
+  }
+
+  code::before {
+    content: "";
+  }
+
+  code::after {
+    content: "";
+  }
+}
+
 @import "./fonts.css";
 @import "./code.css";
 
