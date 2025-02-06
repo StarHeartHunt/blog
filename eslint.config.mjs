@@ -1,7 +1,6 @@
 // @ts-check
 import eslint from "@eslint/js";
 import eslintPluginAstro from "eslint-plugin-astro";
-import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
@@ -30,11 +29,10 @@ export default tseslint.config(
   // Astro
   ...eslintPluginAstro.configs.recommended,
 
-  // Set globals for Node scripts.
   {
-    files: ["scripts/**"],
-    languageOptions: {
-      globals: globals.node,
+    files: ["**/*.{ts,tsx,mts,cts,astro}"],
+    rules: {
+      "no-undef": "off",
     },
   },
 );

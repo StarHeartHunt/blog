@@ -1,8 +1,10 @@
 ---
 import IconLink from "./IconLink.astro";
 
+import type { HTMLAttributes } from "astro/types";
+
 export interface Link {
-  icon: (props: astroHTML.JSX.SVGAttributes) => astroHTML.JSX.Element;
+  icon: (props: HTMLAttributes<"svg">) => astroHTML.JSX.Element;
   link: string;
   name: string;
 }

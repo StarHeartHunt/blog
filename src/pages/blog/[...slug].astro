@@ -16,14 +16,14 @@ const { Content, remarkPluginFrontmatter } = await post.render();
 ---
 
 <script>
-  let copyButtonLabel = "Copy";
-  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+  const copyButtonLabel = "Copy";
+  const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
-  for (let codeBlock of codeBlocks) {
-    let wrapper = document.createElement("div");
+  for (const codeBlock of codeBlocks) {
+    const wrapper = document.createElement("div");
     wrapper.style.position = "relative";
 
-    let copyButton = document.createElement("button");
+    const copyButton = document.createElement("button");
     copyButton.className = "copy-code";
     copyButton.innerHTML = copyButtonLabel;
 
@@ -39,8 +39,8 @@ const { Content, remarkPluginFrontmatter } = await post.render();
   }
 
   async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
-    let code = block.querySelector("code");
-    let text = code?.innerText;
+    const code = block.querySelector("code");
+    const text = code?.innerText;
 
     await navigator.clipboard.writeText(text!);
 

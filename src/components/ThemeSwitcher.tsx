@@ -50,7 +50,6 @@ export default function ThemeSwitcher({ dayIcon, nightIcon }: Props) {
       Math.max(y, innerHeight - y),
     );
     const transition = document.startViewTransition(() => syncTheme());
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     transition.ready.then(() => {
       const clipPath = [
         `circle(0px at ${x}px ${y}px)`,
