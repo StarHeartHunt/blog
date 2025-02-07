@@ -8,7 +8,6 @@ import { defineConfig } from "astro/config";
 import { dirname, resolve } from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
-import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import Icons from "unplugin-icons/vite";
 import { fileURLToPath } from "url";
@@ -25,16 +24,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "one-dark-pro",
     },
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "Table of contents",
-        },
-      ],
-      remarkReadingTime,
-    ],
+    remarkPlugins: [remarkToc, remarkReadingTime],
     rehypePlugins: [
       rehypeHeadingIds,
       [
@@ -95,9 +85,12 @@ export default defineConfig({
         "@": resolve(__dirname, "./src"),
       },
     },
-    plugins: [Icons({
-      compiler: "astro",
-    }), tailwindcss()],
+    plugins: [
+      Icons({
+        compiler: "astro",
+      }),
+      tailwindcss(),
+    ],
   },
   integrations: [
     mdx(),

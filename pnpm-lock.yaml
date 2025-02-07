@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   rehype-pretty-code:
-    hash: vga57ewauy5an7ju37tine3fz4
+    hash: c14dba8001230673f07a885bc86c7119784ac77fa3ec357557293dd66f4a6f34
     path: patches/rehype-pretty-code.patch
 
 importers:
@@ -81,10 +81,7 @@ importers:
         version: 7.1.0
       rehype-pretty-code:
         specifier: ^0.14.0
-        version: 0.14.0(patch_hash=vga57ewauy5an7ju37tine3fz4)(shiki@2.3.1)
-      remark-collapse:
-        specifier: ^0.1.2
-        version: 0.1.2
+        version: 0.14.0(patch_hash=c14dba8001230673f07a885bc86c7119784ac77fa3ec357557293dd66f4a6f34)(shiki@2.3.1)
       remark-toc:
         specifier: ^9.0.0
         version: 9.0.0
@@ -1979,9 +1976,6 @@ packages:
   mdast-util-gfm@3.0.0:
     resolution: {integrity: sha512-dgQEX5Amaq+DuUqf26jJqSK9qgixgd6rYDHAv4aTBuA92cTknZlKpPfa86Z/s8Dj8xsAQpFfBmPUHWJBWqS4Bw==}
 
-  mdast-util-heading-range@2.1.5:
-    resolution: {integrity: sha512-jXbFD0C+MfRkwsaze+btzG9CmVrxnc5kpcJLtx3SvSlPWnNdGMlDRHKDB9/TIPEq9nRHnkixppT8yvaUJ5agJg==}
-
   mdast-util-mdx-expression@2.0.1:
     resolution: {integrity: sha512-J6f+9hUp+ldTZqKRSg7Vw5V6MqjATc+3E4gf3CFNcuZNWD8XdyI6zQ8GqH7f8169MM6P7hMBRDVGnn7oHB9kXQ==}
 
@@ -2002,9 +1996,6 @@ packages:
 
   mdast-util-to-markdown@2.1.2:
     resolution: {integrity: sha512-xj68wMTvGXVOKonmog6LwyJKrYXZPvlwabaryTjLh9LuvovB/KAH+kvi8Gjj+7rJjsFi23nkUxRQv1KqSroMqA==}
-
-  mdast-util-to-string@1.1.0:
-    resolution: {integrity: sha512-jVU0Nr2B9X3MU4tSK7JP1CMkSvOj7X5l/GboG1tKRw52lLF1x2Ju92Ms9tNetCcbfX3hzlM73zYo2NKkWSfF/A==}
 
   mdast-util-to-string@4.0.0:
     resolution: {integrity: sha512-0H44vDimn51F0YwvxSJSm0eCDOJTRlmN0R1yBh4HLj9wiV1Dn0QoXGbvFAWj2hSItVTlCmBF1hqKlIyUBVFLPg==}
@@ -2470,9 +2461,6 @@ packages:
   relateurl@0.2.7:
     resolution: {integrity: sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==}
     engines: {node: '>= 0.10'}
-
-  remark-collapse@0.1.2:
-    resolution: {integrity: sha512-x2lhtaT4nR1Tkp/hftoeiMHbdAntxu5Q9D6lymwMqUtoF2pg3bqNaa8NO/8yyOVhddYk0d0dkhGc+avGUf0lZA==}
 
   remark-gfm@4.0.0:
     resolution: {integrity: sha512-U92vJgBPkbw4Zfu/IiW2oTZLSL3Zpv+uI7My2eq8JxKgqraFdU8YUGicEJCEgSbeaG+QDFqIcwwfMTOEelPxuA==}
@@ -5272,10 +5260,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-heading-range@2.1.5:
-    dependencies:
-      mdast-util-to-string: 1.1.0
-
   mdast-util-mdx-expression@2.0.1:
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -5353,8 +5337,6 @@ snapshots:
       micromark-util-decode-string: 2.0.1
       unist-util-visit: 5.0.0
       zwitch: 2.0.4
-
-  mdast-util-to-string@1.1.0: {}
 
   mdast-util-to-string@4.0.0:
     dependencies:
@@ -5952,7 +5934,7 @@ snapshots:
       hast-util-from-html: 2.0.3
       unified: 11.0.5
 
-  rehype-pretty-code@0.14.0(patch_hash=vga57ewauy5an7ju37tine3fz4)(shiki@2.3.1):
+  rehype-pretty-code@0.14.0(patch_hash=c14dba8001230673f07a885bc86c7119784ac77fa3ec357557293dd66f4a6f34)(shiki@2.3.1):
     dependencies:
       '@types/hast': 3.0.4
       hast-util-to-string: 3.0.1
@@ -5990,11 +5972,6 @@ snapshots:
       unified: 11.0.5
 
   relateurl@0.2.7: {}
-
-  remark-collapse@0.1.2:
-    dependencies:
-      mdast-util-heading-range: 2.1.5
-      mdast-util-to-string: 1.1.0
 
   remark-gfm@4.0.0:
     dependencies:
