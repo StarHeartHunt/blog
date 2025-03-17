@@ -1,7 +1,7 @@
 {
   "name": "@starheart/blog",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "private": true,
   "scripts": {
     "astro": "astro",
@@ -15,16 +15,16 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^6.2.0",
-    "@astrojs/mdx": "^4.1.0",
+    "@astrojs/markdown-remark": "^6.3.0",
+    "@astrojs/mdx": "^4.2.0",
     "@astrojs/preact": "^4.0.5",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
     "@eslint/js": "^9.22.0",
-    "@iconify/json": "^2.2.314",
+    "@iconify/json": "^2.2.317",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.12",
-    "astro": "^5.4.2",
+    "@tailwindcss/vite": "^4.0.14",
+    "astro": "^5.5.2",
     "astro-compress": "^2.3.6",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
@@ -37,13 +37,13 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
-    "rehype-pretty-code": "^0.14.0",
+    "rehype-pretty-code": "^0.14.1",
     "remark-toc": "^9.0.0",
     "rollup": "^4.35.0",
-    "shiki": "^3.1.0",
-    "tailwindcss": "^4.0.12",
+    "shiki": "^3.2.1",
+    "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0",
+    "typescript-eslint": "^8.26.1",
     "unplugin-icons": "^22.1.0"
   },
   "pnpm": {
