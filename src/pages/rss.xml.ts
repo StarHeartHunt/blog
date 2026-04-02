@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
     site: context.site!,
     items: posts.map((post) => ({
       ...post.data,
-      link: `/blog/${post.slug}/`,
+      link: `/blog/${post.id}/`,
     })),
   });
 }
