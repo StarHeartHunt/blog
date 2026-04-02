@@ -1,11 +1,11 @@
 ---
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 import BlogPost from "@/layouts/BlogPost.astro";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 const profile = await getEntry("blog", "about");
 
-const { Content } = await profile.render();
+const { Content } = await render(profile!);
 ---
 
 <BlogPost

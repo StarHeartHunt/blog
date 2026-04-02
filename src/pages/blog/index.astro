@@ -42,7 +42,7 @@ posts.forEach((post) => {
             {posts.map((post) => (
               <div class="slide-enter">
                 <li class="flex flex-col md:flex-row gap-2 md:items-center mb-6 mt-2">
-                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                  <a href={`/blog/${post.id}/`}>{post.data.title}</a>
                   <div class="flex gap-2 items-center">
                     <FormattedDate date={post.data.pubDate} />
                     {`· ${getReadingTime(post.body).text.replace(" read", "")}`}

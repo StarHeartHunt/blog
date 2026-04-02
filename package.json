@@ -47,9 +47,6 @@
     "unplugin-icons": "^22.5.0"
   },
   "pnpm": {
-    "patchedDependencies": {
-      "rehype-pretty-code": "patches/rehype-pretty-code.patch"
-    },
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp"
