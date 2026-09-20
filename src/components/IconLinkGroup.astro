@@ -17,11 +17,9 @@ const { links } = Astro.props;
 ---
 
 <div class="flex gap-3 flex-wrap -mt-2">
-  {
-    links.map(({ icon, link, name }) => (
-      <IconLink Icon={icon} link={link}>
-        {name}
-      </IconLink>
-    ))
-  }
+  {links.map(({ icon, link, name }) => (
+    <IconLink Icon={icon} link={link}>
+      {name}
+    </IconLink>
+  ))}
 </div>
