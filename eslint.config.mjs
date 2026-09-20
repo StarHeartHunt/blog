@@ -1,50 +1,83 @@
 // @ts-check
 import eslint from "@eslint/js";
-import eslintPluginAstro from "eslint-plugin-astro";
-import eslintPluginVue from "eslint-plugin-vue";
+import configPrettier from "eslint-config-prettier/flat";
+import pluginAstro from "eslint-plugin-astro";
+import pluginVue from "eslint-plugin-vue";
+import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+const GLOB_TS = "**/*.?([cm])ts";
+const GLOB_TSX = "**/*.tsx";
+const GLOB_DTS = "**/*.d.ts";
+const GLOB_ASTRO = "**/*.astro";
+const GLOB_VUE = "**/*.vue";
+
+export default defineConfig(
+  globalIgnores(
+    ["**/dist", "**/node_modules", "**/.astro", "**/.github", "**/.vercel"],
+    "blog/global-ignores",
+  ),
+
   {
-    ignores: ["**/dist", "**/node_modules", "**/.astro", "**/.github"],
+    name: "blog/javascript",
+    extends: [eslint.configs.recommended],
   },
 
-  // Global config
-  // JavaScript
-  eslint.configs.recommended,
-  // TypeScript
-  ...tseslint.configs.recommended,
   {
+    name: "blog/typescript",
+    extends: [tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
     },
   },
-  // Allow triple-slash references in `*.d.ts` files.
   {
-    files: ["**/*.d.ts"],
+    name: "blog/typescript/dts-rules",
+    files: [GLOB_DTS],
     rules: {
       "@typescript-eslint/triple-slash-reference": "off",
     },
   },
 
-  // Astro
-  ...eslintPluginAstro.configs.recommended,
-
-  // Vue
-  ...eslintPluginVue.configs["flat/essential"],
   {
-    files: ["**/*.vue"],
+    name: "blog/astro",
+    extends: [pluginAstro.configs["flat/recommended"]],
+  },
+  {
+    name: "blog/astro/a11y",
+    files: [GLOB_ASTRO],
+    extends: [pluginAstro.configs["flat/jsx-a11y-recommended"]],
+  },
+
+  {
+    name: "blog/vue",
+    files: [GLOB_VUE],
+    extends: [
+      pluginVue.configs["flat/recommended"],
+      pluginVueA11y.configs["flat/recommended"],
+    ],
     languageOptions: {
       parserOptions: {
         parser: tseslint.parser,
       },
     },
+    rules: {
+      "vue/multi-word-component-names": "off",
+    },
   },
 
+  // TypeScript already checks undefined variables.
   {
-    files: ["**/*.{ts,tsx,mts,cts,astro,vue}"],
+    name: "blog/disables/no-undef",
+    files: [GLOB_TS, GLOB_TSX, GLOB_ASTRO, GLOB_VUE],
     rules: {
       "no-undef": "off",
     },
+  },
+
+  // Must be last to turn off rules conflicting with Prettier.
+  {
+    name: "blog/prettier",
+    extends: [configPrettier],
   },
 );
