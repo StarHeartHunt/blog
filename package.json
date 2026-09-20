@@ -17,21 +17,22 @@
   "devDependencies": {
     "@astrojs/markdown-remark": "^7.3.0",
     "@astrojs/mdx": "^8.0.0",
-    "@astrojs/preact": "^6.0.5",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/vue": "^7.0.3",
     "@eslint/js": "^9.39.5",
     "@iconify/json": "^2.2.525",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
+    "@vueuse/core": "^15.0.0",
     "astro": "^7.3.1",
     "astro-compress": "^2.4.3",
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.7.0",
+    "eslint-plugin-vue": "^10.11.0",
     "globals": "^17.12.0",
     "mdast-util-to-string": "^4.0.0",
-    "preact": "^10.29.8",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
@@ -44,6 +45,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.69.0",
-    "unplugin-icons": "^23.0.1"
+    "unplugin-icons": "^23.0.1",
+    "vue": "^3.5.43"
   }
 }

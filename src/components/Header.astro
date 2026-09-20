@@ -1,5 +1,5 @@
 ---
-import ThemeSwitcher from "@/components/ThemeSwitcher.tsx";
+import ThemeSwitcher from "@/components/ThemeSwitcher.vue";
 import { SITE_TITLE } from "@/consts";
 import RiMoonLine from "~icons/ri/moon-line";
 import RiSunLine from "~icons/ri/sun-line";
@@ -28,8 +28,12 @@ import HeaderLink from "./HeaderLink.astro";
         </HeaderLink>
         <HeaderLink>
           <ThemeSwitcher client:load>
-            <RiSunLine slot="dayIcon" class="dark:hidden" />
-            <RiMoonLine slot="nightIcon" class="hidden dark:block" />
+            <RiSunLine slot="dayIcon" class="dark:hidden" aria-hidden="true" />
+            <RiMoonLine
+              slot="nightIcon"
+              class="hidden dark:block"
+              aria-hidden="true"
+            />
           </ThemeSwitcher>
         </HeaderLink>
       </ul>

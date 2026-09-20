@@ -1,6 +1,7 @@
 // @ts-check
 import eslint from "@eslint/js";
 import eslintPluginAstro from "eslint-plugin-astro";
+import eslintPluginVue from "eslint-plugin-vue";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
@@ -29,8 +30,19 @@ export default tseslint.config(
   // Astro
   ...eslintPluginAstro.configs.recommended,
 
+  // Vue
+  ...eslintPluginVue.configs["flat/essential"],
   {
-    files: ["**/*.{ts,tsx,mts,cts,astro}"],
+    files: ["**/*.vue"],
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser,
+      },
+    },
+  },
+
+  {
+    files: ["**/*.{ts,tsx,mts,cts,astro,vue}"],
     rules: {
       "no-undef": "off",
     },
