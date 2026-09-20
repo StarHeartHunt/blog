@@ -224,7 +224,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       prettier:
-        specifier: ^3.9.8
+        specifier: ~3.9.8
         version: 3.9.8
       prettier-plugin-astro:
         specifier: ^1.0.1
