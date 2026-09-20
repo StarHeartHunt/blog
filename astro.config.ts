@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
 import compress from "astro-compress";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import { dirname, resolve } from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -19,6 +19,28 @@ const __dirname = dirname(__filename);
 // https://astro.build/config
 export default defineConfig({
   site: "https://baka.icu",
+  // Inter ships as an npm package; Fontsource splits romans and italics into
+  // separate CSS entrypoints, so each needs its own entry. Astro merges them
+  // into one font family because they share a cssVariable, name and provider.
+  fonts: [
+    {
+      provider: fontProviders.npm({ remote: false }),
+      name: "Inter Variable",
+      cssVariable: "--font-inter",
+      weights: ["100 900"],
+      styles: ["normal"],
+      fallbacks: ["ui-sans-serif", "system-ui", "sans-serif"],
+    },
+    {
+      provider: fontProviders.npm({ remote: false }),
+      name: "Inter Variable",
+      cssVariable: "--font-inter",
+      weights: ["100 900"],
+      styles: ["italic"],
+      options: { file: "wght-italic.css" },
+      fallbacks: ["ui-sans-serif", "system-ui", "sans-serif"],
+    },
+  ],
   markdown: {
     syntaxHighlight: false,
     shikiConfig: {
