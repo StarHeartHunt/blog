@@ -45,8 +45,9 @@
 [data-rehype-pretty-code-fragment] code {
   display: block;
   width: 100%;
-  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family:
+    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   counter-reset: line;
 }
 
