@@ -8,7 +8,7 @@
     "build": "astro build",
     "start": "astro dev",
     "format": "pnpm run format:code",
-    "format:code": "prettier --write . --cache --plugin-search-dir=.",
+    "format:code": "prettier --write . --cache",
     "format:package": "pnpx sort-package-json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
