@@ -1,4 +1,4 @@
-import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
@@ -46,60 +46,62 @@ export default defineConfig({
     shikiConfig: {
       theme: "one-dark-pro",
     },
-    remarkPlugins: [remarkToc, remarkReadingTime],
-    rehypePlugins: [
-      rehypeHeadingIds,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "append",
-          properties: {
-            className: ["heading-anchor"],
-          },
-          content: {
-            type: "text",
-            value: "\u200B",
-          },
-        },
-      ],
-      [
-        rehypePrettyCode,
-        {
-          theme: "one-dark-pro",
-          keepBackground: true,
-          // Callback hooks to add custom logic to nodes when visiting
-          // them.
-          onVisitLine(node: { children: string | unknown[] }) {
-            // Prevent lines from collapsing in `display: grid` mode, and
-            // allow empty lines to be copy/pasted
-            if (node.children.length === 0) {
-              node.children = [
-                {
-                  type: "text",
-                  value: " ",
-                },
-              ];
-            }
-          },
-          onVisitHighlightedLine(node: {
+    processor: unified({
+      remarkPlugins: [remarkToc, remarkReadingTime],
+      rehypePlugins: [
+        rehypeHeadingIds,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "append",
             properties: {
-              className: string[];
-            };
-          }) {
-            // Each line node by default has `class="line"`.
-            node.properties.className.push("highlighted");
+              className: ["heading-anchor"],
+            },
+            content: {
+              type: "text",
+              value: "\u200B",
+            },
           },
-          onVisitHighlightedWord(node: {
-            properties: {
-              className: string[];
-            };
-          }) {
-            // Each word node has no className by default.
-            node.properties.className = ["word"];
+        ],
+        [
+          rehypePrettyCode,
+          {
+            theme: "one-dark-pro",
+            keepBackground: true,
+            // Callback hooks to add custom logic to nodes when visiting
+            // them.
+            onVisitLine(node: { children: string | unknown[] }) {
+              // Prevent lines from collapsing in `display: grid` mode, and
+              // allow empty lines to be copy/pasted
+              if (node.children.length === 0) {
+                node.children = [
+                  {
+                    type: "text",
+                    value: " ",
+                  },
+                ];
+              }
+            },
+            onVisitHighlightedLine(node: {
+              properties: {
+                className: string[];
+              };
+            }) {
+              // Each line node by default has `class="line"`.
+              node.properties.className.push("highlighted");
+            },
+            onVisitHighlightedWord(node: {
+              properties: {
+                className: string[];
+              };
+            }) {
+              // Each word node has no className by default.
+              node.properties.className = ["word"];
+            },
           },
-        },
+        ],
       ],
-    ],
+    }),
   },
   vite: {
     resolve: {
