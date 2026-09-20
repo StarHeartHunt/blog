@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"a">;
+type Props = HTMLAttributes<"a"> & { href: string };
 
 const { href, class: className, ...props } = Astro.props;
 ---
@@ -10,7 +10,7 @@ const { href, class: className, ...props } = Astro.props;
   <a
     class:list={[
       className,
-      "flex items-center cursor-pointer no-underline color-inherit transition-opacity ease-[ease] duration-200 opacity-60 hover:opacity-100 outline-none",
+      "flex items-center cursor-pointer no-underline color-inherit transition-opacity ease-[ease] duration-200 rounded-xs opacity-75 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current",
     ]}
     href={href}
     {...props}

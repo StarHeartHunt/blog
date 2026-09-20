@@ -21,10 +21,12 @@ import HeaderLink from "./HeaderLink.astro";
         <HeaderLink
           href="https://github.com/StarHeartHunt/blog"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub (opens in a new tab)"
         >
-          <UilGithubAlt />
+          <UilGithubAlt aria-hidden="true" />
         </HeaderLink>
-        <HeaderLink>
+        <li class="flex items-center p-1 text-inherit">
           <ThemeSwitcher client:load>
             <RiSunLine slot="dayIcon" class="dark:hidden" aria-hidden="true" />
             <RiMoonLine
@@ -33,7 +35,7 @@ import HeaderLink from "./HeaderLink.astro";
               aria-hidden="true"
             />
           </ThemeSwitcher>
-        </HeaderLink>
+        </li>
       </ul>
     </div>
   </nav>
