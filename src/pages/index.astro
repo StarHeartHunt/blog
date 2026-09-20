@@ -8,11 +8,6 @@ const profile = await getEntry("blog", "about");
 const { Content } = await render(profile!);
 ---
 
-<BlogPost
-  title={SITE_TITLE}
-  description={SITE_DESCRIPTION}
-  minutesRead={null}
-  heroImage="/placeholder-about.jpg"
->
+<BlogPost title={SITE_TITLE} description={SITE_DESCRIPTION} minutesRead={null}>
   <Content />
 </BlogPost>
