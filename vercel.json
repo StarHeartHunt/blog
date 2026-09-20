@@ -1,12 +1,5 @@
 {
   "github": {
     "silent": true
-  },
-  "routes": [
-    {
-      "src": "/fonts/(.*)",
-      "headers": { "cache-control": "public, max-age=604800" },
-      "dest": "/fonts/$1"
-    }
-  ]
+  }
 }
