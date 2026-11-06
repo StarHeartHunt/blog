@@ -22,9 +22,10 @@ export default defineConfig({
   // Inter ships as an npm package; Fontsource splits romans and italics into
   // separate CSS entrypoints, so each needs its own entry. Astro merges them
   // into one font family because they share a cssVariable, name and provider.
+  // `remote: false` fails the build until withastro/astro#18515 ships.
   fonts: [
     {
-      provider: fontProviders.npm({ remote: false }),
+      provider: fontProviders.npm(),
       name: "Inter Variable",
       cssVariable: "--font-inter",
       weights: ["100 900"],
@@ -32,7 +33,7 @@ export default defineConfig({
       fallbacks: ["ui-sans-serif", "system-ui", "sans-serif"],
     },
     {
-      provider: fontProviders.npm({ remote: false }),
+      provider: fontProviders.npm(),
       name: "Inter Variable",
       cssVariable: "--font-inter",
       weights: ["100 900"],
